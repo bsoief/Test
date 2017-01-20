@@ -1,4 +1,4 @@
-package luyichao.netty.test.server.config;
+package test.netty.test.server.config;
 
 public class ServerConfig {
 

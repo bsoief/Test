@@ -1,4 +1,4 @@
-package luyichao.netty.test.client;
+package test.netty.test.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;

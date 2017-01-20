@@ -1,4 +1,4 @@
-package luyichao.netty.test.client;
+package test.netty.test.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -7,10 +7,11 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import luyichao.netty.test.client.config.ClientConfig;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import test.netty.test.client.config.ClientConfig;
 
 public class Client {
 	

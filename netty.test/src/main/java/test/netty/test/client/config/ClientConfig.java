@@ -1,4 +1,4 @@
-package luyichao.netty.test.client.config;
+package test.netty.test.client.config;
 
 public class ClientConfig {
 

@@ -1,4 +1,4 @@
-package luyichao.netty.test.client;
+package test.netty.test.client;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
