@@ -1,31 +1,24 @@
 package test.netty.test.client;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
-import io.netty.handler.codec.LengthFieldPrepender;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.SimpleChannelInboundHandler;
 import test.netty.test.object.Person;
 
-public class HelloClientHandler extends SimpleChannelInboundHandler<Object> {
+public class PersonClientHandler extends SimpleChannelInboundHandler<Person> {
 
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, Object msg)
+	protected void channelRead0(ChannelHandlerContext arg0, Person p)
 			throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("Server say : " + (msg instanceof Person));
-		System.out.println("Server say : " + msg);
+		System.out.println("PersonClientHandler.channelRead0 : " + p.getId());
 	}
-
+	
 	@Override
     public void channelActive(final ChannelHandlerContext ctx) throws Exception {
         System.out.println("Client active ");
@@ -34,12 +27,18 @@ public class HelloClientHandler extends SimpleChannelInboundHandler<Object> {
 //        System.out.println("data : " + data);
 //        time.writeInt(data);
         // 写入字符串
-        byte[] data = "a".getBytes();
-        for (byte d : data) {
-        	System.out.println(d);
-        }
+//        byte[] data = "a".getBytes();
+//        for (byte d : data) {
+//        	System.out.println(d);
+//        }
+        
+        // 写入对象
+        Person p = new Person();
+        p.setId("001");
+        p.setName("test1");
+        p.setAge(10);
 
-        final ChannelFuture f = ctx.writeAndFlush(data); // (3)
+        final ChannelFuture f = ctx.writeAndFlush(p); // (3)
         f.addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture future) {
                 assert f == future;
@@ -47,11 +46,5 @@ public class HelloClientHandler extends SimpleChannelInboundHandler<Object> {
             }
         }); // (4)
         super.channelActive(ctx);
-    }
-
-    @Override
-    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("Client close ");
-        super.channelInactive(ctx);
     }
 }

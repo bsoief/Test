@@ -16,6 +16,7 @@ public class HelloServerHandler extends SimpleChannelInboundHandler<ByteBuf> {
 		for (byte d : data) {
 			System.out.println(d);
 		}
+		System.out.println(ctx.channel().remoteAddress() + " Say : " + new String(data));
 		// 返回客户端消息 - 我已经接收到了你的消息
         ctx.writeAndFlush("Received your message !\n");
 	}
