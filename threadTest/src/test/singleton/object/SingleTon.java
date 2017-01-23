@@ -8,15 +8,15 @@ package test.singleton.object;
 public class SingleTon {
 
 	private static class Single {
-		private static SingleTon instance = new SingleTon();
+		private volatile static SingleTon instance = new SingleTon();
 	}
-	
+
 	public static SingleTon getInstance() {
 		return Single.instance;
 	}
-	
+
 	private String value;
-	
+
 	private SingleTon() {
 		value = "init";
 	}

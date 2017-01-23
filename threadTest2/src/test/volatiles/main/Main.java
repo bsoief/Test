@@ -1,7 +1,7 @@
 package test.volatiles.main;
 
 /**
- * ²âÊÔClientÄ£Ê½ÏÂ£¬·ÇvolatileĞŞÊÎµÄ¶ÔÏóµÄ¿É¼ûĞÔ
+ * æµ‹è¯•Clientæ¨¡å¼ä¸‹ï¼Œévolatileä¿®é¥°çš„å¯¹è±¡çš„å¯è§æ€§
  * @author admin
  *
  */
@@ -13,7 +13,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		test1();
 	}
-	
+
 	public static void test1() {
 		Runnable run = new Runnable() {
 			@Override
@@ -29,7 +29,7 @@ public class Main {
 		};
 		Thread t = new Thread(run);
 		t.start();
-		
+
 		while (true) {
 			if (flag == false) {
 				System.out.println(flag);

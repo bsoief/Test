@@ -1,17 +1,17 @@
 package test.volatiles.main;
 
 /**
- * ²âÊÔsynchronized¶ÔvolatileµÄÌæ»»
+ * æµ‹è¯•synchronizedå¯¹volatileçš„æ›¿æ¢
  * @author admin
  */
 public class Main2 {
-	
+
 	private static boolean flag = true;
-	
+
 	public static synchronized boolean getFlag() {
 		return flag;
 	}
-	
+
 	public static synchronized void setFlag(boolean flag) {
 		Main2.flag = flag;
 	}
@@ -41,13 +41,13 @@ public class Main2 {
 				System.exit(0);
 			}
 		};
-		
+
 		Thread t = new Thread(run);
 		t.start();
-		
+
 		while (true) {
-			// Èç¹ûsynchronizedĞŞÊÎ·û£¬»áÊ¹µÃÏß³Ì»ñÈ¡¶ÔÏóÖµÊ±£¬´ÓÖ÷ÄÚ´æÖØĞÂ»ñÈ¡
-			// Èç¹ûÖ±½ÓÊ¹ÓÃMain2.flag£¬ÔòÎŞ·¨»ñÈ¡µ½ĞŞ¸ÄºóµÄflagÖµ
+			// å¦‚æœsynchronizedä¿®é¥°ç¬¦ï¼Œä¼šä½¿å¾—çº¿ç¨‹è·å–å¯¹è±¡å€¼æ—¶ï¼Œä»ä¸»å†…å­˜é‡æ–°è·å–
+			// å¦‚æœç›´æ¥ä½¿ç”¨Main2.flagï¼Œåˆ™æ— æ³•è·å–åˆ°ä¿®æ”¹åçš„flagå€¼
 			if (getFlag() == false) {
 				System.out.println(flag);
 				break;

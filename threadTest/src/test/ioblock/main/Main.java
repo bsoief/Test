@@ -3,7 +3,7 @@ package test.ioblock.main;
 import java.util.Scanner;
 
 /**
- * ²âÊÔIO×èÈûÊÇ·ñÊÇÏß³Ì×èÈû£¨ÇëÊ¹ÓÃjvisualvm¹¤¾ß²é¿´Ïß³Ì×´Ì¬£¬Êµ¼ÊÎªRUNNABLE×´Ì¬£©
+ * æµ‹è¯•IOé˜»å¡æ˜¯å¦æ˜¯çº¿ç¨‹é˜»å¡ï¼ˆè¯·ä½¿ç”¨jvisualvmå·¥å…·æŸ¥çœ‹çº¿ç¨‹çŠ¶æ€ï¼Œå®é™…ä¸ºRUNNABLEçŠ¶æ€ï¼‰
  * @author admin
  *
  */
@@ -20,12 +20,12 @@ public class Main {
 			public void run() {
 				// TODO Auto-generated method stub
 				Scanner scanner = new Scanner(System.in);
-				System.out.println("ÇëÊäÈë");
+				System.out.println("è¯·è¾“å…¥");
 				System.out.println(scanner.next());
 				scanner.close();
 			}
 		};
-		
+
 		Thread t = new Thread(run);
 		t.start();
 	}

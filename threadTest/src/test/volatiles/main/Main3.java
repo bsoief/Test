@@ -3,13 +3,13 @@ package test.volatiles.main;
 import test.volatiles.staticobject.Person;
 
 /**
- * 测试volatile对对象的作用
+ * 娴嬭瘯volatile瀵瑰璞＄殑浣滅敤
  * @author admin
  */
 public class Main3 {
-	
+
 	public static volatile Person person = new Person();
-	
+
 	static {
 		person.setMale(false);
 	}
@@ -34,7 +34,7 @@ public class Main3 {
 		};
 		Thread t = new Thread(run);
 		t.start();
-		
+
 		while (true) {
 			if (person.isMale() == true) {
 				System.out.println(person.isMale());

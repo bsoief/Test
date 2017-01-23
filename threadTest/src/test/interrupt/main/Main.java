@@ -1,5 +1,10 @@
 package test.interrupt.main;
 
+/**
+ * 测试中断异常
+ * @author admin
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) throws Exception{
