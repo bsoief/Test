@@ -7,7 +7,7 @@ package test.volatiles.main;
  */
 public class Main {
 
-	public static boolean flag = true;
+	public static volatile boolean flag = true;
 
 	public static void main(String[] args) {
 		test1();

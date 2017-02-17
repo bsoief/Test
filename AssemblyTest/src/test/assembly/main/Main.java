@@ -1,4 +1,4 @@
-package test.singleton.main;
+package test.assembly.main;
 
 public class Main {
 
@@ -8,7 +8,7 @@ public class Main {
 	}
 
 	public static void test1() {
-		SingleTon singleTon = SingleTon.getInstance();
-		System.out.println(singleTon.getValue());
+		SingleTon instance = SingleTon.getInstance();
+		System.out.println(instance.getValue());
 	}
 }

@@ -1,14 +1,13 @@
 package test.singleton.object;
 
 /**
- * 使用静态类来延迟加载
  * @author admin
  *
  */
 public class SingleTon {
 
 	private static class Single {
-		private volatile static SingleTon instance = new SingleTon();
+		private static SingleTon instance = new SingleTon();
 	}
 
 	public static SingleTon getInstance() {

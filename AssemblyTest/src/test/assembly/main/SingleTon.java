@@ -1,4 +1,4 @@
-package test.singleton.main;
+package test.assembly.main;
 
 /**
  * @author admin
