@@ -3,7 +3,7 @@ package test.ioblock.main;
 import java.util.Scanner;
 
 /**
- * 测试IO阻塞是否是线程阻塞（请使用jvisualvm工具查看线程状态，实际为RUNNABLE状态）
+ * 测试IO阻塞是否是线程阻塞（请使用jvisualvm工具查看线程状态，实际为RUNNABLE状态，但查看操作系统的线程状态，为挂起）
  * @author admin
  *
  */

@@ -1,0 +1,4 @@
+CompilerOracle: dontinline *Main.sum
+CompilerOracle: compileonly *Main.sum
+CompilerOracle: dontinline *Main.sum
+CompilerOracle: compileonly *Main.sum

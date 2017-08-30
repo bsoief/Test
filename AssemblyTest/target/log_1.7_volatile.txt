@@ -1,0 +1,654 @@
+Java HotSpot(TM) 64-Bit Server VM warning: PrintAssembly is enabled; turning on DebugNonSafepoints to gain additional output
+Loaded disassembler from D:\software\java\jdk1.7\jdk1.7\jre\bin\server\hsdis-amd64.dll
+Decoding compiled method 0x0000000002772cd0:
+Code:
+Argument 0 is unknown.RIP: 0x2772e00 Code size: 0x00000098
+[Disassembling for mach='amd64']
+[Entry Point]
+[Constants]
+  # {method} 'charAt' '(I)C' in 'java/lang/String'
+  # this:     rdx:rdx   = 'java/lang/String'
+  # parm0:    r8        = int
+  #           [sp+0x30]  (sp of caller)
+  0x0000000002772e00: mov     r10d,dword ptr [rdx+8h]
+  0x0000000002772e04: cmp     rax,r10
+  0x0000000002772e07: jne     2747a60h          ;   {runtime_call}
+  0x0000000002772e0d: nop
+[Verified Entry Point]
+  0x0000000002772e10: mov     dword ptr [rsp+0ffffffffffffa000h],eax
+  0x0000000002772e17: push    rbp
+  0x0000000002772e18: sub     rsp,20h           ;*synchronization entry
+                                                ; - java.lang.String::charAt@-1 (line 657)
+  0x0000000002772e1c: test    r8d,r8d
+  0x0000000002772e1f: jl      2772e55h          ;*iflt
+                                                ; - java.lang.String::charAt@1 (line 657)
+  0x0000000002772e21: mov     ebp,dword ptr [rdx+0ch]  ;*getfield value
+                                                ; - java.lang.String::charAt@6 (line 657)
+  0x0000000002772e24: mov     r10d,dword ptr [rbp+0ch]
+                                                ;*arraylength
+                                                ; - java.lang.String::charAt@9 (line 657)
+                                                ; implicit exception: dispatches to 0x0000000002772e65
+  0x0000000002772e28: cmp     r8d,r10d
+  0x0000000002772e2b: jnl     2772e55h          ;*if_icmplt
+                                                ; - java.lang.String::charAt@10 (line 657)
+  0x0000000002772e2d: cmp     r8d,r10d
+  0x0000000002772e30: jnb     2772e44h
+  0x0000000002772e32: movzx   eax,word ptr [rbp+r8*2+10h]
+  0x0000000002772e38: add     rsp,20h
+  0x0000000002772e3c: pop     rbp
+  0x0000000002772e3d: test    dword ptr [230000h],eax  ;   {poll_return}
+  0x0000000002772e43: ret
+  0x0000000002772e44: mov     edx,0ffffffe4h
+  0x0000000002772e49: mov     dword ptr [rsp],r8d
+  0x0000000002772e4d: nop
+  0x0000000002772e4f: call    27474e0h          ; OopMap{rbp=NarrowOop off=84}
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ;   {runtime_call}
+  0x0000000002772e54: int3
+  0x0000000002772e55: mov     edx,0f2h
+  0x0000000002772e5a: mov     ebp,r8d
+  0x0000000002772e5d: nop
+  0x0000000002772e5f: call    27474e0h          ; OopMap{off=100}
+                                                ;*new  ; - java.lang.String::charAt@13 (line 658)
+                                                ;   {runtime_call}
+  0x0000000002772e64: int3                      ;*new  ; - java.lang.String::charAt@13 (line 658)
+  0x0000000002772e65: mov     edx,0fffffff6h
+  0x0000000002772e6a: nop
+  0x0000000002772e6b: call    27474e0h          ; OopMap{off=112}
+                                                ;*arraylength
+                                                ; - java.lang.String::charAt@9 (line 657)
+                                                ;   {runtime_call}
+  0x0000000002772e70: int3                      ;*arraylength
+                                                ; - java.lang.String::charAt@9 (line 657)
+  0x0000000002772e71: hlt
+  0x0000000002772e72: hlt
+  0x0000000002772e73: hlt
+  0x0000000002772e74: hlt
+  0x0000000002772e75: hlt
+  0x0000000002772e76: hlt
+  0x0000000002772e77: hlt
+  0x0000000002772e78: hlt
+  0x0000000002772e79: hlt
+  0x0000000002772e7a: hlt
+  0x0000000002772e7b: hlt
+  0x0000000002772e7c: hlt
+  0x0000000002772e7d: hlt
+  0x0000000002772e7e: hlt
+  0x0000000002772e7f: hlt
+[Exception Handler]
+[Stub Code]
+  0x0000000002772e80: jmp     276fba0h          ;   {no_reloc}
+[Deopt Handler Code]
+  0x0000000002772e85: call    2772e8ah
+  0x0000000002772e8a: sub     qword ptr [rsp],5h
+  0x0000000002772e8f: jmp     2749000h          ;   {runtime_call}
+  0x0000000002772e94: hlt
+  0x0000000002772e95: hlt
+  0x0000000002772e96: hlt
+  0x0000000002772e97: hlt
+Decoding compiled method 0x0000000002771e50:
+Code:
+Argument 0 is unknown.RIP: 0x2771fa0 Code size: 0x00000378
+[Entry Point]
+[Constants]
+  # {method} 'compare' '(Ljava/lang/String;Ljava/lang/String;)I' in 'sun/misc/ASCIICaseInsensitiveComparator'
+  # this:     rdx:rdx   = 'sun/misc/ASCIICaseInsensitiveComparator'
+  # parm0:    r8:r8     = 'java/lang/String'
+  # parm1:    r9:r9     = 'java/lang/String'
+  #           [sp+0x50]  (sp of caller)
+  0x0000000002771fa0: mov     r10d,dword ptr [rdx+8h]
+  0x0000000002771fa4: cmp     rax,r10
+  0x0000000002771fa7: jne     2747a60h          ;   {runtime_call}
+  0x0000000002771fad: nop
+[Verified Entry Point]
+  0x0000000002771fb0: mov     dword ptr [rsp+0ffffffffffffa000h],eax
+  0x0000000002771fb7: push    rbp
+  0x0000000002771fb8: sub     rsp,40h           ;*synchronization entry
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@-1 (line 41)
+  0x0000000002771fbc: mov     r10,r9
+  0x0000000002771fbf: mov     qword ptr [rsp+8h],r8
+  0x0000000002771fc4: mov     edi,dword ptr [r8+0ch]  ;*getfield value
+                                                ; - java.lang.String::length@1 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+                                                ; implicit exception: dispatches to 0x00000000027722b1
+  0x0000000002771fc8: mov     r9d,dword ptr [rdi+0ch]  ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+                                                ; implicit exception: dispatches to 0x00000000027722bd
+  0x0000000002771fcc: mov     rsi,r10
+  0x0000000002771fcf: mov     r13d,dword ptr [r10+0ch]
+                                                ;*getfield value
+                                                ; - java.lang.String::length@1 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@6 (line 41)
+                                                ; implicit exception: dispatches to 0x00000000027722c9
+  0x0000000002771fd3: mov     ecx,dword ptr [r13+0ch]  ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@6 (line 41)
+                                                ; implicit exception: dispatches to 0x00000000027722d5
+  0x0000000002771fd7: cmp     r9d,ecx
+  0x0000000002771fda: jnl     2771fe1h          ;*if_icmpge
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@14 (line 42)
+  0x0000000002771fdc: mov     r11d,r9d
+  0x0000000002771fdf: jmp     2771fe4h
+  0x0000000002771fe1: mov     r11d,ecx          ;*istore
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@23 (line 42)
+  0x0000000002771fe4: test    r11d,r11d
+  0x0000000002771fe7: jle     2772214h          ;*if_icmpge
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@32 (line 43)
+  0x0000000002771fed: test    r9d,r9d
+  0x0000000002771ff0: jbe     2772247h
+  0x0000000002771ff6: mov     r8d,r11d
+  0x0000000002771ff9: dec     r8d
+  0x0000000002771ffc: cmp     r8d,r9d
+  0x0000000002771fff: jnb     2772247h
+  0x0000000002772005: test    ecx,ecx
+  0x0000000002772007: jbe     2772247h
+  0x000000000277200d: cmp     r8d,ecx
+  0x0000000002772010: jnb     2772247h
+  0x0000000002772016: xor     ebx,ebx
+  0x0000000002772018: mov     edx,1h
+  0x000000000277201d: cmp     r11d,edx
+  0x0000000002772020: mov     r10d,r11d
+  0x0000000002772023: cmovnle r10d,edx          ;*aload_1
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@35 (line 44)
+  0x0000000002772027: test    ebx,ebx
+  0x0000000002772029: jl      2772269h          ;*iflt
+                                                ; - java.lang.String::charAt@1 (line 657)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x000000000277202f: cmp     ebx,r9d
+  0x0000000002772032: jnl     2772269h          ;*if_icmplt
+                                                ; - java.lang.String::charAt@10 (line 657)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x0000000002772038: movzx   ebp,word ptr [rdi+rbx*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x000000000277203d: cmp     ebx,ecx
+  0x000000000277203f: jnl     277228dh          ;*if_icmplt
+                                                ; - java.lang.String::charAt@10 (line 657)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x0000000002772045: movzx   edx,word ptr [r13+rbx*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x000000000277204b: cmp     ebp,edx
+  0x000000000277204d: je      2772168h          ;*if_icmpeq
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@83 (line 47)
+  0x0000000002772053: mov     r8d,5ah
+  0x0000000002772059: sub     r8d,edx
+  0x000000000277205c: mov     r14d,edx
+  0x000000000277205f: add     r14d,0ffffffbfh
+  0x0000000002772063: or      r14d,r8d
+  0x0000000002772066: test    r14d,r14d
+  0x0000000002772069: jnl     277221eh          ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@99 (line 49)
+  0x000000000277206f: mov     r14d,5ah
+  0x0000000002772075: sub     r14d,ebp
+  0x0000000002772078: mov     r8d,ebp
+  0x000000000277207b: add     r8d,0ffffffbfh
+  0x000000000277207f: or      r8d,r14d
+  0x0000000002772082: mov     eax,ebp
+  0x0000000002772084: add     eax,20h
+  0x0000000002772087: test    r8d,r8d
+  0x000000000277208a: cmovl   eax,ebp
+  0x000000000277208d: movzx   eax,ax            ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@91 (line 48)
+  0x0000000002772090: cmp     eax,edx
+  0x0000000002772092: je      2772168h          ;*if_icmpeq
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@106 (line 50)
+  0x0000000002772098: jmp     277215ah
+  0x000000000277209d: nop
+  0x00000000027720a0: add     ebx,2h            ;*iinc
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@115 (line 43)
+  0x00000000027720a3: cmp     ebx,ebp
+  0x00000000027720a5: jnl     277219eh          ;*aload_1
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@35 (line 44)
+  0x00000000027720ab: movzx   edx,word ptr [r13+rbx*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x00000000027720b1: movzx   r8d,word ptr [rdi+rbx*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x00000000027720b7: cmp     r8d,edx
+  0x00000000027720ba: je      27720ffh          ;*if_icmpeq
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@83 (line 47)
+  0x00000000027720bc: mov     r10d,5ah
+  0x00000000027720c2: sub     r10d,edx
+  0x00000000027720c5: mov     r14d,edx
+  0x00000000027720c8: add     r14d,0ffffffbfh
+  0x00000000027720cc: or      r14d,r10d
+  0x00000000027720cf: test    r14d,r14d
+  0x00000000027720d2: jnl     2772229h          ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@99 (line 49)
+  0x00000000027720d8: mov     r14d,5ah
+  0x00000000027720de: sub     r14d,r8d
+  0x00000000027720e1: mov     r10d,r8d
+  0x00000000027720e4: add     r10d,0ffffffbfh
+  0x00000000027720e8: or      r10d,r14d
+  0x00000000027720eb: mov     eax,r8d
+  0x00000000027720ee: add     eax,20h
+  0x00000000027720f1: test    r10d,r10d
+  0x00000000027720f4: cmovl   eax,r8d
+  0x00000000027720f8: movzx   eax,ax            ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@91 (line 48)
+  0x00000000027720fb: cmp     eax,edx
+  0x00000000027720fd: jne     277215ah          ;*iinc
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@115 (line 43)
+  0x00000000027720ff: movsxd  r10,ebx
+  0x0000000002772102: movzx   r14d,word ptr [rdi+r10*2+12h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x0000000002772108: movzx   edx,word ptr [r13+r10*2+12h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x000000000277210e: cmp     r14d,edx
+  0x0000000002772111: je      27720a0h          ;*if_icmpeq
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@83 (line 47)
+  0x0000000002772113: mov     r10d,5ah
+  0x0000000002772119: sub     r10d,edx
+  0x000000000277211c: mov     r8d,edx
+  0x000000000277211f: add     r8d,0ffffffbfh
+  0x0000000002772123: or      r8d,r10d
+  0x0000000002772126: test    r8d,r8d
+  0x0000000002772129: jnl     2772234h          ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@99 (line 49)
+  0x000000000277212f: mov     r10d,5ah
+  0x0000000002772135: sub     r10d,r14d
+  0x0000000002772138: mov     r8d,r14d
+  0x000000000277213b: add     r8d,0ffffffbfh
+  0x000000000277213f: or      r8d,r10d
+  0x0000000002772142: mov     eax,r14d
+  0x0000000002772145: add     eax,20h
+  0x0000000002772148: test    r8d,r8d
+  0x000000000277214b: cmovl   eax,r14d
+  0x000000000277214f: movzx   eax,ax            ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@91 (line 48)
+  0x0000000002772152: cmp     eax,edx
+  0x0000000002772154: je      27720a0h          ;*if_icmpeq
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@106 (line 50)
+  0x000000000277215a: sub     eax,edx           ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+  0x000000000277215c: add     rsp,40h
+  0x0000000002772160: pop     rbp
+  0x0000000002772161: test    dword ptr [230000h],eax  ;   {poll_return}
+  0x0000000002772167: ret
+  0x0000000002772168: inc     ebx               ;*iinc
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@115 (line 43)
+  0x000000000277216a: cmp     ebx,r10d
+  0x000000000277216d: jl      2772027h          ;*if_icmpge
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@32 (line 43)
+  0x0000000002772173: cmp     ecx,r11d
+  0x0000000002772176: mov     r8d,ecx
+  0x0000000002772179: cmovnle r8d,r11d
+  0x000000000277217d: cmp     r8d,r9d
+  0x0000000002772180: cmovnle r8d,r9d
+  0x0000000002772184: mov     ebp,r8d
+  0x0000000002772187: dec     ebp
+  0x0000000002772189: mov     r10d,80000000h
+  0x000000000277218f: cmp     r8d,ebp
+  0x0000000002772192: cmovl   ebp,r10d
+  0x0000000002772196: cmp     ebx,ebp
+  0x0000000002772198: jl      27720abh
+  0x000000000277219e: cmp     ebx,r11d
+  0x00000000027721a1: jnl     2772214h
+  0x00000000027721a3: nop                       ;*aload_1
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@35 (line 44)
+  0x00000000027721a4: test    ebx,ebx
+  0x00000000027721a6: jl      2772269h          ;*iflt
+                                                ; - java.lang.String::charAt@1 (line 657)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x00000000027721ac: cmp     ebx,r9d
+  0x00000000027721af: jnl     2772269h          ;*if_icmplt
+                                                ; - java.lang.String::charAt@10 (line 657)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x00000000027721b5: movzx   ebp,word ptr [rdi+rbx*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x00000000027721ba: cmp     ebx,ecx
+  0x00000000027721bc: jnl     277228dh          ;*if_icmplt
+                                                ; - java.lang.String::charAt@10 (line 657)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x00000000027721c2: movzx   edx,word ptr [r13+rbx*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::charAt@27 (line 660)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x00000000027721c8: cmp     ebp,edx
+  0x00000000027721ca: je      277220dh          ;*if_icmpeq
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@83 (line 47)
+  0x00000000027721cc: mov     r10d,5ah
+  0x00000000027721d2: sub     r10d,edx
+  0x00000000027721d5: mov     r8d,edx
+  0x00000000027721d8: add     r8d,0ffffffbfh
+  0x00000000027721dc: or      r8d,r10d
+  0x00000000027721df: test    r8d,r8d
+  0x00000000027721e2: jnl     277223fh          ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@99 (line 49)
+  0x00000000027721e4: mov     r8d,5ah
+  0x00000000027721ea: sub     r8d,ebp
+  0x00000000027721ed: mov     r14d,ebp
+  0x00000000027721f0: add     r14d,0ffffffbfh
+  0x00000000027721f4: or      r14d,r8d
+  0x00000000027721f7: mov     eax,ebp
+  0x00000000027721f9: add     eax,20h
+  0x00000000027721fc: test    r14d,r14d
+  0x00000000027721ff: cmovl   eax,ebp
+  0x0000000002772202: movzx   eax,ax            ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@91 (line 48)
+  0x0000000002772205: cmp     eax,edx
+  0x0000000002772207: jne     277215ah
+  0x000000000277220d: inc     ebx               ;*iinc
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@115 (line 43)
+  0x000000000277220f: cmp     ebx,r11d
+  0x0000000002772212: jl      27721a4h          ;*iload_3
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@121 (line 55)
+  0x0000000002772214: mov     eax,r9d
+  0x0000000002772217: sub     eax,ecx           ;*isub
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@124 (line 55)
+  0x0000000002772219: jmp     277215ch
+  0x000000000277221e: add     edx,20h
+  0x0000000002772221: movzx   edx,dx
+  0x0000000002772224: jmp     277206fh
+  0x0000000002772229: add     edx,20h
+  0x000000000277222c: movzx   edx,dx
+  0x000000000277222f: jmp     27720d8h
+  0x0000000002772234: add     edx,20h
+  0x0000000002772237: movzx   edx,dx
+  0x000000000277223a: jmp     277212fh
+  0x000000000277223f: add     edx,20h
+  0x0000000002772242: movzx   edx,dx            ;*i2c  ; - sun.misc.ASCIICaseInsensitiveComparator::compare@99 (line 49)
+  0x0000000002772245: jmp     27721e4h
+  0x0000000002772247: mov     edx,0ffffff86h
+  0x000000000277224c: mov     rbp,qword ptr [rsp+8h]
+  0x0000000002772251: mov     qword ptr [rsp],r10
+  0x0000000002772255: mov     dword ptr [rsp+8h],r9d
+  0x000000000277225a: mov     dword ptr [rsp+0ch],ecx
+  0x000000000277225e: mov     dword ptr [rsp+10h],r11d
+  0x0000000002772263: call    27474e0h          ; OopMap{rbp=Oop [0]=Oop off=712}
+                                                ;*aload_1
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@35 (line 44)
+                                                ;   {runtime_call}
+  0x0000000002772268: int3
+  0x0000000002772269: mov     edx,0f2h
+  0x000000000277226e: mov     dword ptr [rsp],ebx
+  0x0000000002772271: mov     qword ptr [rsp+10h],rsi
+  0x0000000002772276: mov     dword ptr [rsp+4h],r9d
+  0x000000000277227b: mov     dword ptr [rsp+18h],ecx
+  0x000000000277227f: mov     dword ptr [rsp+1ch],r11d
+  0x0000000002772284: nop
+  0x0000000002772287: call    27474e0h          ; OopMap{[8]=Oop [16]=Oop off=748}
+                                                ;*new  ; - java.lang.String::charAt@13 (line 658)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+                                                ;   {runtime_call}
+  0x000000000277228c: int3                      ;*new  ; - java.lang.String::charAt@13 (line 658)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@38 (line 44)
+  0x000000000277228d: mov     edx,0f2h
+  0x0000000002772292: mov     dword ptr [rsp+4h],ebx
+  0x0000000002772296: mov     qword ptr [rsp+10h],rsi
+  0x000000000277229b: mov     dword ptr [rsp+18h],r9d
+  0x00000000027722a0: mov     dword ptr [rsp+1ch],ecx
+  0x00000000027722a4: mov     dword ptr [rsp+20h],r11d
+  0x00000000027722a9: nop
+  0x00000000027722ab: call    27474e0h          ; OopMap{[8]=Oop [16]=Oop off=784}
+                                                ;*new  ; - java.lang.String::charAt@13 (line 658)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+                                                ;   {runtime_call}
+  0x00000000027722b0: int3                      ;*new  ; - java.lang.String::charAt@13 (line 658)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@46 (line 45)
+  0x00000000027722b1: mov     edx,0fffffff6h
+  0x00000000027722b6: nop
+  0x00000000027722b7: call    27474e0h          ; OopMap{off=796}
+                                                ;*invokevirtual length
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+                                                ;   {runtime_call}
+  0x00000000027722bc: int3                      ;*invokevirtual length
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+  0x00000000027722bd: mov     edx,0fffffff6h
+  0x00000000027722c2: nop
+  0x00000000027722c3: call    27474e0h          ; OopMap{off=808}
+                                                ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+                                                ;   {runtime_call}
+  0x00000000027722c8: int3                      ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@1 (line 41)
+  0x00000000027722c9: mov     edx,0fffffff6h
+  0x00000000027722ce: nop
+  0x00000000027722cf: call    27474e0h          ; OopMap{off=820}
+                                                ;*invokevirtual length
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@6 (line 41)
+                                                ;   {runtime_call}
+  0x00000000027722d4: int3                      ;*invokevirtual length
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@6 (line 41)
+  0x00000000027722d5: mov     edx,0fffffff6h
+  0x00000000027722da: nop
+  0x00000000027722db: call    27474e0h          ; OopMap{off=832}
+                                                ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@6 (line 41)
+                                                ;   {runtime_call}
+  0x00000000027722e0: int3                      ;*arraylength
+                                                ; - java.lang.String::length@4 (line 623)
+                                                ; - sun.misc.ASCIICaseInsensitiveComparator::compare@6 (line 41)
+  0x00000000027722e1: hlt
+  0x00000000027722e2: hlt
+  0x00000000027722e3: hlt
+  0x00000000027722e4: hlt
+  0x00000000027722e5: hlt
+  0x00000000027722e6: hlt
+  0x00000000027722e7: hlt
+  0x00000000027722e8: hlt
+  0x00000000027722e9: hlt
+  0x00000000027722ea: hlt
+  0x00000000027722eb: hlt
+  0x00000000027722ec: hlt
+  0x00000000027722ed: hlt
+  0x00000000027722ee: hlt
+  0x00000000027722ef: hlt
+  0x00000000027722f0: hlt
+  0x00000000027722f1: hlt
+  0x00000000027722f2: hlt
+  0x00000000027722f3: hlt
+  0x00000000027722f4: hlt
+  0x00000000027722f5: hlt
+  0x00000000027722f6: hlt
+  0x00000000027722f7: hlt
+  0x00000000027722f8: hlt
+  0x00000000027722f9: hlt
+  0x00000000027722fa: hlt
+  0x00000000027722fb: hlt
+  0x00000000027722fc: hlt
+  0x00000000027722fd: hlt
+  0x00000000027722fe: hlt
+  0x00000000027722ff: hlt
+[Exception Handler]
+[Stub Code]
+  0x0000000002772300: jmp     276fba0h          ;   {no_reloc}
+[Deopt Handler Code]
+  0x0000000002772305: call    277230ah
+  0x000000000277230a: sub     qword ptr [rsp],5h
+  0x000000000277230f: jmp     2749000h          ;   {runtime_call}
+  0x0000000002772314: hlt
+  0x0000000002772315: hlt
+  0x0000000002772316: hlt
+  0x0000000002772317: hlt
+Decoding compiled method 0x000000000276ffd0:
+Code:
+Argument 0 is unknown.RIP: 0x2770120 Code size: 0x00000188
+[Entry Point]
+[Constants]
+  # {method} 'indexOf' '(II)I' in 'java/lang/String'
+  # this:     rdx:rdx   = 'java/lang/String'
+  # parm0:    r8        = int
+  # parm1:    r9        = int
+  #           [sp+0x30]  (sp of caller)
+  0x0000000002770120: mov     r10d,dword ptr [rdx+8h]
+  0x0000000002770124: cmp     rax,r10
+  0x0000000002770127: jne     2747a60h          ;   {runtime_call}
+  0x000000000277012d: nop
+[Verified Entry Point]
+  0x0000000002770130: mov     dword ptr [rsp+0ffffffffffffa000h],eax
+  0x0000000002770137: push    rbp
+  0x0000000002770138: sub     rsp,20h           ;*synchronization entry
+                                                ; - java.lang.String::indexOf@-1 (line 1526)
+  0x000000000277013c: mov     edi,dword ptr [rdx+0ch]  ;*getfield value
+                                                ; - java.lang.String::indexOf@1 (line 1526)
+  0x000000000277013f: mov     ebp,dword ptr [rdi+0ch]  ;*arraylength
+                                                ; - java.lang.String::indexOf@4 (line 1526)
+                                                ; implicit exception: dispatches to 0x000000000277025a
+  0x0000000002770142: mov     eax,0ffffffffh
+  0x0000000002770147: test    r9d,r9d
+  0x000000000277014a: jl      2770249h          ;*ifge
+                                                ; - java.lang.String::indexOf@7 (line 1527)
+  0x0000000002770150: cmp     r9d,ebp
+  0x0000000002770153: jnl     2770213h          ;*if_icmplt
+                                                ; - java.lang.String::indexOf@17 (line 1529)
+  0x0000000002770159: cmp     r8d,10000h
+  0x0000000002770160: jnl     2770251h          ;*if_icmpge
+                                                ; - java.lang.String::indexOf@25 (line 1534)
+  0x0000000002770166: cmp     r9d,ebp
+  0x0000000002770169: jnl     2770213h          ;*if_icmpge
+                                                ; - java.lang.String::indexOf@40 (line 1538)
+  0x000000000277016f: cmp     r9d,ebp
+  0x0000000002770172: jnb     2770231h
+  0x0000000002770178: mov     r10d,ebp
+  0x000000000277017b: dec     r10d
+  0x000000000277017e: cmp     r10d,ebp
+  0x0000000002770181: jnb     2770231h
+  0x0000000002770187: mov     ecx,r9d
+  0x000000000277018a: inc     ecx               ;*aload
+                                                ; - java.lang.String::indexOf@43 (line 1539)
+  0x000000000277018c: movzx   ebx,word ptr [rdi+r9*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::indexOf@47 (line 1539)
+  0x0000000002770192: cmp     ebx,r8d
+  0x0000000002770195: je      277022ch          ;*if_icmpne
+                                                ; - java.lang.String::indexOf@49 (line 1539)
+  0x000000000277019b: inc     r9d               ;*iinc
+                                                ; - java.lang.String::indexOf@55 (line 1538)
+  0x000000000277019e: cmp     r9d,ecx
+  0x00000000027701a1: jl      277018ch          ;*if_icmpge
+                                                ; - java.lang.String::indexOf@40 (line 1538)
+  0x00000000027701a3: mov     edx,ebp
+  0x00000000027701a5: add     edx,0fffffffdh
+  0x00000000027701a8: mov     r11d,80000000h
+  0x00000000027701ae: cmp     r10d,edx
+  0x00000000027701b1: cmovl   edx,r11d
+  0x00000000027701b5: cmp     r9d,edx
+  0x00000000027701b8: jnl     27701f8h
+  0x00000000027701ba: nop     word ptr [rax+rax+0h]  ;*aload
+                                                ; - java.lang.String::indexOf@43 (line 1539)
+  0x00000000027701c0: movzx   r11d,word ptr [rdi+r9*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::indexOf@47 (line 1539)
+  0x00000000027701c6: cmp     r11d,r8d
+  0x00000000027701c9: je      277022ch          ;*if_icmpne
+                                                ; - java.lang.String::indexOf@49 (line 1539)
+  0x00000000027701cb: movsxd  r10,r9d
+  0x00000000027701ce: movzx   ecx,word ptr [rdi+r10*2+12h]
+                                                ;*caload
+                                                ; - java.lang.String::indexOf@47 (line 1539)
+  0x00000000027701d4: cmp     ecx,r8d
+  0x00000000027701d7: je      2770223h          ;*if_icmpne
+                                                ; - java.lang.String::indexOf@49 (line 1539)
+  0x00000000027701d9: movzx   r11d,word ptr [rdi+r10*2+14h]
+                                                ;*caload
+                                                ; - java.lang.String::indexOf@47 (line 1539)
+  0x00000000027701df: cmp     r11d,r8d
+  0x00000000027701e2: je      2770228h          ;*if_icmpne
+                                                ; - java.lang.String::indexOf@49 (line 1539)
+  0x00000000027701e4: movzx   r10d,word ptr [rdi+r10*2+16h]
+                                                ;*caload
+                                                ; - java.lang.String::indexOf@47 (line 1539)
+  0x00000000027701ea: cmp     r10d,r8d
+  0x00000000027701ed: je      277021fh          ;*if_icmpne
+                                                ; - java.lang.String::indexOf@49 (line 1539)
+  0x00000000027701ef: add     r9d,4h            ;*iinc
+                                                ; - java.lang.String::indexOf@55 (line 1538)
+  0x00000000027701f3: cmp     r9d,edx
+  0x00000000027701f6: jl      27701c0h          ;*if_icmpge
+                                                ; - java.lang.String::indexOf@40 (line 1538)
+  0x00000000027701f8: cmp     r9d,ebp
+  0x00000000027701fb: jnl     2770213h
+  0x00000000027701fd: nop                       ;*aload
+                                                ; - java.lang.String::indexOf@43 (line 1539)
+  0x0000000002770200: movzx   r10d,word ptr [rdi+r9*2+10h]
+                                                ;*caload
+                                                ; - java.lang.String::indexOf@47 (line 1539)
+  0x0000000002770206: cmp     r10d,r8d
+  0x0000000002770209: je      277022ch          ;*if_icmpne
+                                                ; - java.lang.String::indexOf@49 (line 1539)
+  0x000000000277020b: inc     r9d               ;*iinc
+                                                ; - java.lang.String::indexOf@55 (line 1538)
+  0x000000000277020e: cmp     r9d,ebp
+  0x0000000002770211: jl      2770200h          ;*aload
+                                                ; - java.lang.String::indexOf@43 (line 1539)
+  0x0000000002770213: add     rsp,20h
+  0x0000000002770217: pop     rbp
+  0x0000000002770218: test    dword ptr [230000h],eax  ;   {poll_return}
+  0x000000000277021e: ret
+  0x000000000277021f: add     r9d,2h
+  0x0000000002770223: inc     r9d
+  0x0000000002770226: jmp     277022ch
+  0x0000000002770228: add     r9d,2h            ;*iinc
+                                                ; - java.lang.String::indexOf@55 (line 1538)
+  0x000000000277022c: mov     eax,r9d
+  0x000000000277022f: jmp     2770213h
+  0x0000000002770231: mov     edx,0ffffff86h
+  0x0000000002770236: mov     dword ptr [rsp],r8d
+  0x000000000277023a: mov     dword ptr [rsp+4h],edi
+  0x000000000277023e: mov     dword ptr [rsp+8h],r9d
+  0x0000000002770243: call    27474e0h          ; OopMap{[4]=NarrowOop off=296}
+                                                ;*aload
+                                                ; - java.lang.String::indexOf@43 (line 1539)
+                                                ;   {runtime_call}
+  0x0000000002770248: int3                      ;*aload
+                                                ; - java.lang.String::indexOf@43 (line 1539)
+  0x0000000002770249: xor     r9d,r9d
+  0x000000000277024c: jmp     2770159h
+  0x0000000002770251: nop
+  0x0000000002770253: call    2747c60h          ; OopMap{off=312}
+                                                ;*invokespecial indexOfSupplementary
+                                                ; - java.lang.String::indexOf@66 (line 1545)
+                                                ;   {optimized virtual_call}
+  0x0000000002770258: jmp     2770213h
+  0x000000000277025a: mov     edx,0fffffff6h
+  0x000000000277025f: call    27474e0h          ; OopMap{off=324}
+                                                ;*arraylength
+                                                ; - java.lang.String::indexOf@4 (line 1526)
+                                                ;   {runtime_call}
+  0x0000000002770264: int3                      ;*invokespecial indexOfSupplementary
+                                                ; - java.lang.String::indexOf@66 (line 1545)
+  0x0000000002770265: mov     rdx,rax
+  0x0000000002770268: add     rsp,20h
+  0x000000000277026c: pop     rbp
+  0x000000000277026d: jmp     2772a20h          ;*iconst_m1
+                                                ; - java.lang.String::indexOf@61 (line 1543)
+                                                ;   {runtime_call}
+  0x0000000002770272: hlt
+  0x0000000002770273: hlt
+  0x0000000002770274: hlt
+  0x0000000002770275: hlt
+  0x0000000002770276: hlt
+  0x0000000002770277: hlt
+  0x0000000002770278: hlt
+  0x0000000002770279: hlt
+  0x000000000277027a: hlt
+  0x000000000277027b: hlt
+  0x000000000277027c: hlt
+  0x000000000277027d: hlt
+  0x000000000277027e: hlt
+  0x000000000277027f: hlt
+[Stub Code]
+  0x0000000002770280: mov     rbx,0h            ;   {no_reloc}
+  0x000000000277028a: jmp     277028ah          ;   {runtime_call}
+[Exception Handler]
+  0x000000000277028f: jmp     276fba0h          ;   {runtime_call}
+[Deopt Handler Code]
+  0x0000000002770294: call    2770299h
+  0x0000000002770299: sub     qword ptr [rsp],5h
+  0x000000000277029e: jmp     2749000h          ;   {runtime_call}
+  0x00000000027702a3: hlt
+  0x00000000027702a4: hlt
+  0x00000000027702a5: hlt
+  0x00000000027702a6: hlt
+  0x00000000027702a7: hlt

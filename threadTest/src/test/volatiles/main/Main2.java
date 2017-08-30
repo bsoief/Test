@@ -47,6 +47,8 @@ public class Main2 {
 		while (true) {
 			// 如果synchronized修饰符，会使得线程获取对象值时，从主内存重新获取
 			// 如果直接使用Main2.flag，则无法获取到修改后的flag值
+
+			// 以上解释应该是错误的，synchronized会阻止重排序
 			if (getFlag() == false) {
 				System.out.println(flag);
 				break;
